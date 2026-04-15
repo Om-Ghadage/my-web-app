@@ -1,13 +1,9 @@
 @echo off
 echo Deploying application...
 
-REM Delete old ROOT folder
-rmdir /S /Q C:\apache-tomcat\webapps\ROOT 2>nul
+rmdir /S /Q "C:\Users\OM Ghadage\Downloads\apache-tomcat-9.0.115\webapps\ROOT" 2>nul
+mkdir "C:\Users\OM Ghadage\Downloads\apache-tomcat-9.0.115\webapps\ROOT"
 
-REM Create new ROOT folder
-mkdir C:\apache-tomcat\webapps\ROOT
-
-REM Copy files from Jenkins workspace
-xcopy /E /I /Y "%WORKSPACE%\*" C:\apache-tomcat\webapps\ROOT\
+xcopy /E /I /Y "%WORKSPACE%\*" "C:\Users\OM Ghadage\Downloads\apache-tomcat-9.0.115\webapps\ROOT\"
 
 echo Deployment completed!
